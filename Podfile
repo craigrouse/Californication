@@ -10,10 +10,11 @@ target 'Californication' do
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
-  pod 'GoogleMaps', '1.13.2'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
   pod 'MBProgressHUD'
   pod 'HCSStarRatingView'
-  pod 'AlamofireImage', :git => 'https://github.com/Alamofire/AlamofireImage.git', :branch => 'swift4.2'
+  pod 'AlamofireImage'
   pod 'AwesomeCache'
   
   target 'CalifornicationTests' do

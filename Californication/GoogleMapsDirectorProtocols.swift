@@ -22,6 +22,7 @@
 
 import Foundation
 import GoogleMaps
+import GooglePlaces
 
 typealias GoogleMapsDirectorPlaceSuccess  = (GMSPlace) -> Void
 typealias GoogleMapsDirectorPlacesSuccess = ([GMSPlace]) -> Void

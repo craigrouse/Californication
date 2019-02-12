@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.ivanmagda.Californication</string>
+				<string>com.tealium.Californication</string>
 			</array>
 		</dict>
 		<dict>
@@ -33,7 +33,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.336721683118-sjutsciln1t0t761kd217ombv3htn15i</string>
+				<string>com.googleusercontent.apps.971275352613-op1jpnnqp4fds457al7sguqm12prktvf</string>
 			</array>
 		</dict>
 	</array>

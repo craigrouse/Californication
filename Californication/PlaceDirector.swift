@@ -22,6 +22,7 @@
 
 import Foundation
 import GoogleMaps
+import GooglePlaces
 
 // MARK: PlaceDirector: PlaceDirectorFacade
 

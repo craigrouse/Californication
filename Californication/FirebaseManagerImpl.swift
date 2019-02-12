@@ -35,7 +35,10 @@ class FirebaseManagerImpl: FirebaseManager {
   
   func all(_ completion: @escaping (DataSnapshot) -> ()) {
     func fetch() {
-      root.child("places").observeSingleEvent(of: .value, with: completion)
+        let child = root.child("places")
+        child.observeSingleEvent(of: .value) { [weak self] places in
+            completion(places)
+        }
     }
     
     if authManager.isAuthorized() {

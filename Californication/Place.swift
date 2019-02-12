@@ -23,6 +23,7 @@
 import Foundation
 import CoreLocation.CLLocation
 import GoogleMaps
+import GooglePlaces
 
 // MARK: Types
 
@@ -174,12 +175,15 @@ final class Place: NSObject, NSCoding {
 extension Place {
   
   convenience init(firebasePlace fPlace: FPlace, googleMapsPlace gmPlace: GMSPlace) {
-    let types = gmPlace.types.map { $0.replacingOccurrences(of: "_", with: " ") }
+//    let types = gmPlace.types.map { $0.replacingOccurrences(of: "_", with: " ") }
+    let types = gmPlace.types?.compactMap {
+        $0.replacingOccurrences(of: "_", with: " ")
+    }
     let image = PlaceImage(thumbnail: fPlace.thumbnailURL,
                            medium: fPlace.mediumURL, large: fPlace.largeURL)
     
     self.init(
-      placeID: gmPlace.placeID,
+      placeID: gmPlace.placeID!,
       name: fPlace.name,
       summary: fPlace.summary,
       detailDescription: fPlace.detailDescription,
@@ -188,7 +192,7 @@ extension Place {
       formattedAddress: gmPlace.formattedAddress,
       rating: gmPlace.rating,
       priceLevel: PlacePriceLevel(rawValue: gmPlace.priceLevel.rawValue)!,
-      types: types,
+      types: types!,
       website: gmPlace.website,
       image:  image
     )

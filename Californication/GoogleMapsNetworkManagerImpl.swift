@@ -22,6 +22,7 @@
 
 import Foundation
 import GoogleMaps
+import GooglePlaces
 
 // MARK: CannedGoogleMapsNetworkManager: GoogleMapsNetworkManager
 
@@ -40,7 +41,7 @@ class GoogleMapsNetworkManagerImpl: GoogleMapsNetworkManager {
   func places(with ids: [String], success: @escaping GoogleMapsNetworkPlacesResponse,
               failure: @escaping GoogleMapsFailureBlock) {
     var places = [GMSPlace]()
-    let client = GMSPlacesClient()
+    let client = GMSPlacesClient.shared()
     
     func processOnResponse(_ place: GMSPlace?, error: Error?) {
       guard let place = place else { return failure(error) }
@@ -51,7 +52,9 @@ class GoogleMapsNetworkManagerImpl: GoogleMapsNetworkManager {
       }
     }
     
-    ids.forEach { client.lookUpPlaceID($0, callback: processOnResponse) }
+    ids.forEach {
+        client.lookUpPlaceID($0, callback: processOnResponse)
+    }
   }
   
 }

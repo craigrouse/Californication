@@ -23,5 +23,5 @@
 import Foundation
 
 enum Constants: String {
-  case googleMapsAPIKey = "REPLACE_WITH_YOUR_API_KEY"
+  case googleMapsAPIKey = "AIzaSyCOyQHtlxGsd0OCta6Pz_pNRl33giUIzF4"
 }

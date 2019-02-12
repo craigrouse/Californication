@@ -23,6 +23,7 @@
 import Foundation
 import Firebase
 import GoogleMaps
+import GooglePlaces
 
 final class AppConfigurator {
   
@@ -31,6 +32,7 @@ final class AppConfigurator {
            "Please goto Constants.swift and replace Google Maps API key with your own.")
     FirebaseApp.configure()
     GMSServices.provideAPIKey(Constants.googleMapsAPIKey.rawValue)
+    GMSPlacesClient.provideAPIKey(Constants.googleMapsAPIKey.rawValue)
   }
   
   func theme(with window: UIWindow) {

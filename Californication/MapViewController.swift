@@ -22,6 +22,7 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
 // MARK: MapViewController: UIViewController
 
@@ -82,7 +83,7 @@ class MapViewController: UIViewController {
       locationMarker.map = mapView
       locationMarker.userData = ["id": place.placeID]
       locationMarker.title = place.name
-      locationMarker.appearAnimation = kGMSMarkerAnimationPop
+        locationMarker.appearAnimation = GMSMarkerAnimation.pop
       locationMarker.icon = GMSMarker.markerImage(with: .red)
       locationMarker.opacity = 0.95
       locationMarker.isFlat = true
